@@ -1,0 +1,16 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+    <h1>WELCOME TO TASKED</h1>
+    <h3>YOUR TASKS ARE AS BELOW  </h3>
+    <table>
+        <th>work description</th>
+        <th>status</th>
+            {% for i in data %}
+                <tr>
+                    <td> {{ i.taskDesc }} </td>
+                    <td> {{ i.status }} </td>
+                </tr>
+            {% endfor %}
+    </table>
+{% endblock content %}
