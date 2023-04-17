@@ -12,14 +12,20 @@
     </form>
 
     <table>
-        <th>work description</th>
-        <th>status</th>
+        <th>TASK DESCRIPTION</th>
         <th>OPERATIONS</th>
-        {% for i in data %}
+        {% for task in data %}
             <tr>
-                <td> {{ i.taskDesc }} </td>
-                <td> {{ i.status }} </td>
-                <td> <a href="{% url 'todoDelete' i.pk %}">Delete</a></td>
+                {% if not task.status %}
+                    <td> {{ task.taskDesc }} </td>
+                {% else %}
+                    <td> <s>{{ task.taskDesc }}</s> </td>
+                {% endif %}
+
+                <td> 
+                    <a href="{% url 'todoDelete' task.pk %}">Delete</a>
+                    <a href="{% url 'todoDone' task.pk %}">Done</a>
+                </td>
             </tr>
         {% endfor %}
     </table>
