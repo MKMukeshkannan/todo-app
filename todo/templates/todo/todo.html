@@ -14,11 +14,13 @@
     <table>
         <th>work description</th>
         <th>status</th>
-            {% for i in data %}
-                <tr>
-                    <td> {{ i.taskDesc }} </td>
-                    <td> {{ i.status }} </td>
-                </tr>
-            {% endfor %}
+        <th>OPERATIONS</th>
+        {% for i in data %}
+            <tr>
+                <td> {{ i.taskDesc }} </td>
+                <td> {{ i.status }} </td>
+                <td> <a href="{% url 'todoDelete' i.pk %}">Delete</a></td>
+            </tr>
+        {% endfor %}
     </table>
 {% endblock content %}

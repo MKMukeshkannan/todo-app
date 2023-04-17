@@ -23,3 +23,7 @@ def todoMain(request):
     }    
     return render(request, 'todo/todo.html', context=context)
 
+def todoDelete(request, pk):
+    task = todoDB.objects.get(id=pk)
+    task.delete()
+    return redirect('todo')
