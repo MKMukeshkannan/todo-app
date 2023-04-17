@@ -23,3 +23,17 @@ def todoMain(request):
     }    
     return render(request, 'todo/todo.html', context=context)
 
+def todoDelete(request, pk):
+    task = todoDB.objects.get(id=pk)
+    task.delete()
+    return redirect('todo')
+
+def todoDone(request, pk):
+    task = todoDB.objects.get(id=pk)
+    if task.status == False:
+        task.status = True
+    else:
+        task.status = False
+
+    task.save()
+    return redirect('todo')
