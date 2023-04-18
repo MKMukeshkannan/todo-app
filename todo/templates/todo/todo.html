@@ -1,16 +1,25 @@
 {% extends 'todo/base.html' %}
+{% load tailwind_filters %}
 
 {% block content %}
     <div class = 'pt-20'>
         <h1 class = "pb-20 text-neutral-800 text-center text-5xl font-bold">WELCOME TO TASKED</h1>
 
-        <form method='POST'>
-            {% csrf_token %}
-    
-            {{ form}}
-    
-            <button type="submit">ADD</button>
-        </form>
+        <div class="">
+
+            <form class = "max-w-full mx-auto flex space-x-1.5 justify-center items-center px-20" action="" method="POST">
+                <div class = "w-11/12">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                </div>
+                    
+                
+                <button type = 'submit' class="mt-4 w-1/12 bg-yellow-400 hover:bg-yellow-300 text-white font-bold py-1.5 px-4 border-b-4 border-yellow-500 hover:border-yellow-500 rounded">
+                    ADD
+                </button>
+
+            </form>
+        </div>
 
         <div class="border border-8 border-b-0 border-yellow-400 m-20 mb-0 rounded-t-3xl bg-amber-100 p-10">
             <table class = "table-fixed w-full">
