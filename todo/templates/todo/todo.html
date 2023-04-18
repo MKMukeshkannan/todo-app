@@ -12,7 +12,7 @@
             <button type="submit">ADD</button>
         </form>
 
-        <div class="outline outline-8 outline-yellow-400 m-20 mb-0 rounded-t-3xl bg-amber-100 p-10">
+        <div class="border border-8 border-b-0 border-yellow-400 m-20 mb-0 rounded-t-3xl bg-amber-100 p-10">
             <table class = "table-fixed w-full">
                 <col class = "w-96"/>
                 <col class = "w-6"/>
@@ -21,20 +21,23 @@
                     <tr>
     
                         {% if not task.status %}
-                            <td class = "overflow-hidden border text-2xl tracking-wider"> {{ task.taskDesc }} </td>
+                            <td class = "capitalize p-4 pl-4 overflow-hidden border-2 border-r-0 border-solid border-yellow-400 text-2xl tracking-wider"> {{ task.taskDesc }} </td>
                         {% else %}
-                            <td class = "overflow-hidden line-through border text-2xl tracking-wider"> {{ task.taskDesc }} </td>
+                            <td class = "capitalize p-4 pl-4 overflow-hidden line-through border-2 border-r-0 border-solid border-yellow-400 text-2xl tracking-wider"> {{ task.taskDesc }} </td>
                         {% endif %}
             
-                        <td class = "border text-2xl ">
-                            <a href="{% url 'todoDone' task.pk %}">-</a>
-                            <a href="{% url 'todoDelete' task.pk %}">x</a>
+                        <td class = "border-2 border-l-0 border-solid border-yellow-400 text-2xl ">
+                            <a class = "" href="{% url 'todoDone' task.pk %}">-</a>
+                            <a class = "" href="{% url 'todoDelete' task.pk %}">x</a>
                         </td>
     
                     </tr>
                 {% endfor %}
     
             </table>
+        </div>
+        <div class="border border-x-8 border-t-0 border-yellow-400 mx-20  bg-amber-100 p-48">
+
         </div>
                 
     </div>
