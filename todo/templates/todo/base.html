@@ -15,8 +15,10 @@
 <body>
     <div >
         {% include 'todo/header.html' %}
-        {% block content %}
-        {% endblock content %}
+        <div class = 'py-0 p-14 bg-amber-50'>
+            {% block content %}
+            {% endblock content %}
+        </div>
         {% include 'todo/footer.html' %}
     </div>
     
