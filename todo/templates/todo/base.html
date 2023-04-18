@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class = "min-h-screen">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,15 +12,12 @@
         <title> TASKED </title>
     {% endif %}
 </head>
-<body>
-    <div >
-        {% include 'todo/header.html' %}
-        <div class = 'py-0 p-14 bg-amber-50'>
-            {% block content %}
-            {% endblock content %}
-        </div>
-        {% include 'todo/footer.html' %}
+<body class = "flex flex-col min-h-screen bg-amber-50">
+    {% include 'todo/header.html' %}
+    <div class = 'py-0 p-14 bg-amber-50'>
+        {% block content %}
+        {% endblock content %}
     </div>
-    
+    {% include 'todo/footer.html' %}    
 </body>
 </html>
