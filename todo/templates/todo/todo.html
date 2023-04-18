@@ -1,32 +1,43 @@
 {% extends 'todo/base.html' %}
 
 {% block content %}
-    <h1>WELCOME TO TASKED</h1>
-    <h3>YOUR TASKS ARE AS BELOW  </h3>
-    <form method = 'POST' action="">
-        {% csrf_token %}
+    <div class = 'pt-20'>
+        <h1 class = "pb-20 text-neutral-800 text-center text-5xl font-bold">WELCOME TO TASKED</h1>
 
-        {{ form}}
+        <form method='POST'>
+            {% csrf_token %}
+    
+            {{ form}}
+    
+            <button type="submit">ADD</button>
+        </form>
 
-        <button type="submit">ADD</button>
-    </form>
+        <div class="outline outline-8 outline-yellow-400 m-20 mb-0 rounded-t-3xl bg-amber-100 p-10">
+            <table class = "table-fixed w-full">
+                <col class = "w-96"/>
+                <col class = "w-6"/>
+    
+                {% for task in data %}
+                    <tr>
+    
+                        {% if not task.status %}
+                            <td class = "overflow-hidden border text-2xl tracking-wider"> {{ task.taskDesc }} </td>
+                        {% else %}
+                            <td class = "overflow-hidden line-through border text-2xl tracking-wider"> {{ task.taskDesc }} </td>
+                        {% endif %}
+            
+                        <td class = "border text-2xl ">
+                            <a href="{% url 'todoDone' task.pk %}">-</a>
+                            <a href="{% url 'todoDelete' task.pk %}">x</a>
+                        </td>
+    
+                    </tr>
+                {% endfor %}
+    
+            </table>
+        </div>
+                
+    </div>
+    
 
-    <table>
-        <th>TASK DESCRIPTION</th>
-        <th>OPERATIONS</th>
-        {% for task in data %}
-            <tr>
-                {% if not task.status %}
-                    <td> {{ task.taskDesc }} </td>
-                {% else %}
-                    <td> <s>{{ task.taskDesc }}</s> </td>
-                {% endif %}
-
-                <td> 
-                    <a href="{% url 'todoDelete' task.pk %}">Delete</a>
-                    <a href="{% url 'todoDone' task.pk %}">Done</a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
 {% endblock content %}
