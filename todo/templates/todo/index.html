@@ -7,9 +7,9 @@
         <h1 class = "text-neutral-800 text-center text-9xl font-bold"> TASKED </h1>
         <h1 class = "text-neutral-800 text-center text-base"> A WebApp to manage your tasks ...</h1>
         <div class = "mt-10 flex justify-center items-center">
-            <button
-                class="text-white bg-yellow-400 border-0 py-2 px-4 w-1/6 focus:outline-none hover:bg-amber-400 rounded">SIGN UP
-            </button>
+            <a href="{% url 'signup' %}" class="bg-yellow-400 text-neutral-800 font-medium rounded-lg text-sm lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-amber-400 hover:text-white">
+                SIGN UP 
+            </a>
         </div>
     </div>
     <hr>
@@ -20,10 +20,11 @@
     <div class = "py-60">
         <h1 class = "mb-10 text-neutral-800 text-center text-xl">TRY NOW BY SIGNING UP !!! </h1>
         <div class = "flex justify-center items-center">
-            <button
-                class="text-white bg-yellow-400 border-0 py-2 px-4 w-1/6 focus:outline-none hover:bg-amber-400 rounded">SIGN UP
-            </button>
+            <a href="{% url 'signup' %}" class="bg-yellow-400 text-neutral-800 font-medium rounded-lg text-sm lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-amber-400 hover:text-white">
+                SIGN UP 
+            </a>
         </div>
         
     </div>
+
 {% endblock content %}
