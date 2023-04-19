@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class = "min-h-screen">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
     {% if title %}
         <title> {{ title }} </title>
     {% else %}
         <title> TASKED </title>
     {% endif %}
 </head>
-<body>
-    {% block content %}
-    {% endblock content %}
+<body class = "flex flex-col min-h-screen bg-amber-50">
+    {% include 'todo/header.html' %}
+    <div class = 'py-0 p-14 bg-amber-50'>
+        {% block content %}
+        {% endblock content %}
+    </div>
+    {% include 'todo/footer.html' %}    
 </body>
 </html>

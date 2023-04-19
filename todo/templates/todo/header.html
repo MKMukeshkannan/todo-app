@@ -1,0 +1,25 @@
+<header>
+    <nav class="bg-white px-4 lg:px-6 py-6 bg-yellow-400">
+
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+
+            <a href="{% url 'home' %}" class="flex items-center">
+                <img src="" class="mr-3 h-6 sm:h-9" alt="" />
+                <span class="self-center text-xl font-semibold whitespace-nowrap text-neutral-800">TASKED</span>
+            </a>
+
+            {% if user.is_authenticated %}
+                <div class="flex items-center lg:order-2">
+                    <h1 class = "pr-3 capitalize" > {{ user.username }} </h1>
+
+                    <a href="{% url 'logout' %}" class="text-neutral-800 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-amber-400 hover:text-white">Log Out</a>
+                </div>
+            {% else %}
+                <div class="flex items-center lg:order-2">
+                    <a href="{% url 'login' %}" class="text-neutral-800 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-amber-400 hover:text-white">Log In</a>
+                </div>
+            {% endif %}
+        </div>
+
+    </nav>
+</header>

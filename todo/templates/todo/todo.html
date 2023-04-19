@@ -1,32 +1,55 @@
 {% extends 'todo/base.html' %}
+{% load tailwind_filters %}
 
 {% block content %}
-    <h1>WELCOME TO TASKED</h1>
-    <h3>YOUR TASKS ARE AS BELOW  </h3>
-    <form method = 'POST' action="">
-        {% csrf_token %}
+    <div class = 'pt-20'>
+        <h1 class = "pb-20 text-neutral-800 text-center text-5xl font-bold">WELCOME TO TASKED</h1>
 
-        {{ form}}
+        <div class="">
 
-        <button type="submit">ADD</button>
-    </form>
+            <form class = "max-w-full mx-auto flex space-x-1.5 justify-center items-center px-20" action="" method="POST">
+                <div class = "w-11/12">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                </div>
+                    
+                
+                <button type = 'submit' class="mt-4 w-1/12 bg-yellow-400 hover:bg-yellow-300 text-white font-bold py-1.5 px-4 border-b-4 border-yellow-500 hover:border-yellow-500 rounded">
+                    ADD
+                </button>
 
-    <table>
-        <th>TASK DESCRIPTION</th>
-        <th>OPERATIONS</th>
-        {% for task in data %}
-            <tr>
-                {% if not task.status %}
-                    <td> {{ task.taskDesc }} </td>
-                {% else %}
-                    <td> <s>{{ task.taskDesc }}</s> </td>
-                {% endif %}
+            </form>
+        </div>
 
-                <td> 
-                    <a href="{% url 'todoDelete' task.pk %}">Delete</a>
-                    <a href="{% url 'todoDone' task.pk %}">Done</a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+        <div class="border border-8 border-b-0 border-yellow-400 m-20 mb-0 rounded-t-3xl bg-amber-100 p-10">
+            <table class = "table-fixed w-full">
+                <col class = "w-96"/>
+                <col class = "w-6"/>
+    
+                {% for task in data %}
+                    <tr>
+    
+                        {% if not task.status %}
+                            <td class = "capitalize p-4 pl-4 overflow-hidden border-2 border-r-0 border-solid border-yellow-400 text-2xl tracking-wider"> {{ task.taskDesc }} </td>
+                        {% else %}
+                            <td class = "capitalize p-4 pl-4 overflow-hidden line-through border-2 border-r-0 border-solid border-yellow-400 text-2xl tracking-wider"> {{ task.taskDesc }} </td>
+                        {% endif %}
+            
+                        <td class = "border-2 border-l-0 border-solid border-yellow-400 text-2xl ">
+                            <a class = "" href="{% url 'todoDone' task.pk %}">-</a>
+                            <a class = "" href="{% url 'todoDelete' task.pk %}">x</a>
+                        </td>
+    
+                    </tr>
+                {% endfor %}
+    
+            </table>
+        </div>
+        <div class="border border-x-8 border-t-0 border-yellow-400 mx-20  bg-amber-100 p-48">
+
+        </div>
+                
+    </div>
+    
+
 {% endblock content %}
