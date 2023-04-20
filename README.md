@@ -35,11 +35,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -47,8 +43,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 Taked is a to-do WebApp used to manage tasks efficiently. This app includes a user login function that allows users to manage their tasks on any device they want. They can delete tasks that are not needed or strike tasks that are done. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -88,30 +82,50 @@ Django is a python based Web-Framework, so you will need python to use this proj
 
 _Follow the steps given below to clone, install and set up the project on your machine_
 
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/MKMukeshkannan/todo-app
    ```
-3. Go to that directory 
+2. Go to that directory 
    ```sh
    cd todo-app
    ```
-4. Create a virtual environment
+3. Create a virtual environment
    ```sh
    pip install virtualenv
    ```
      ON WINDOWS
     ```sh
-     py -m venv env
+     virtualenv env
+     env\Scripts\activate
      ```
      ON MAC
      ```sh
      virtualenv env
-     ```
-     ```sh
      source env/bin/activate
      ```
-
+4. Install dependencies
+   ```sh
+   pip install -r requirments.txt
+   ```
+5. Make Migrations  
+   ```sh
+   python manage.py makemigrations
+   ```
+   ```sh
+   python manage.py migrate
+   ```
+ 6. Create a super user to login
+    ```sh
+    python manage.py createsuperuser 
+    ```
+  and enter username and password
+  
+ 7. Now Runserver to use,
+    ```sh
+    python manage.py runserver
+    ```
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -119,85 +133,30 @@ _Follow the steps given below to clone, install and set up the project on your m
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+User need to log-in to gain access to their dashboard. New users can create an account by signning up.
+User can type their task in the feild given and click on the add button to add the task into the space below.
+They can strike out tasks that are done by clicking on the dash icon (-)
+or delete the tasks by clicking on the cross ( x )
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+M K Mukesh Kannan - [@mukesh-kannan](https://www.linkedin.com/in/mukesh-kannan-mk/) - mukeshkannan311@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+Project Link: [TODO](https://github.com/MKMukeshkannan/todo-app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+<!-- CONTACT -->
+## Screenshot of the project
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 [Django]: https://img.shields.io/badge/Django-20232A?style=for-the-badge&logo=Django&logoColor=#092E20
 [Django-url]: https://www.djangoproject.com/
