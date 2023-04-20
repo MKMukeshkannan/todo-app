@@ -151,8 +151,21 @@ Project Link: [TODO](https://github.com/MKMukeshkannan/todo-app)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- CONTACT -->
+<!-- SCREENSHOTs -->
 ## Screenshot of the project
+
+<h3>HOME PAGE</h3>
+<img src = "images/homepage.jpg" width = 500px>
+
+<h3>LOGIN PAGE</h3>
+<img src = "images/loginpage.png"  width = 500px>
+
+<h3>SIGNUP PAGE</h3>
+<img src = "images/signup.jpg" width = 500px>
+
+<h3>TODO PAGE</h3>
+<img src = "images/todoapp.jpg" width = 500px>
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
